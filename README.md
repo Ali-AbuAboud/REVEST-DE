@@ -21,6 +21,17 @@ This repository contains a solution for the REVEST-DE technical task.
 1. Clone the repository.
 2. Use Docker Compose to set up the environment.
 3. Access the services via the exposed ports.
+4. To run the project, please follow the instructions in Documentation.docx or use Docker:
+
++For the Data Warehouse:
+
+-cd data_warehouse
+-docker-compose up --build
+
++For the Model Deployment:
+
+-cd model_deployment
+-docker-compose up --build
 
 ## License
 - This project is open-source. Feel free to contribute or modify it as needed.
