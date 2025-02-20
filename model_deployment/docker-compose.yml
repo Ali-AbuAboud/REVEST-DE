@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - logging_db
+    environment:
+      - DB_USER=postgres
+      - DB_PASSWORD=root
+      - DB_HOST=logging_db
+      - DB_PORT=5432
+      - DB_NAME=logging  # Ensure this is set to 'logging'
+
+  logging_db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: logging  # This database is used for logging
+    ports:
+      - "5433:5432"
